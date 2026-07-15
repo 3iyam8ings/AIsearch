@@ -33,7 +33,9 @@ You MUST format your entire response using the following XML structure exactly. 
   <QUESTION>First suggested follow-up question</QUESTION>
   <QUESTION>Second suggested follow-up question</QUESTION>
   <QUESTION>Third suggested follow-up question</QUESTION>
-</FOLLOW_UPS>`;
+</FOLLOW_UPS>
+
+IMPORTANT FOR CONVERSATIONAL RULES: If you are answering one of the 5 specific conversational phrases above, you MUST STILL use this exact XML format. Just put your reply inside the <ANSWER> tags, use <TITLE>Chat</TITLE>, and leave <FOLLOW_UPS> empty.
 
   const userPrompt = `USER QUERY: ${query}\n\nSEARCH RESULTS:\n${context}`;
 
@@ -112,7 +114,9 @@ You MUST format your entire response using the following XML structure exactly. 
   <QUESTION>First suggested follow-up question</QUESTION>
   <QUESTION>Second suggested follow-up question</QUESTION>
   <QUESTION>Third suggested follow-up question</QUESTION>
-</FOLLOW_UPS>`;
+</FOLLOW_UPS>
+
+IMPORTANT FOR CONVERSATIONAL RULES: If you are answering one of the 5 specific conversational phrases above, you MUST STILL use this exact XML format. Just put your reply inside the <ANSWER> tags, use <TITLE>Chat</TITLE>, and leave <FOLLOW_UPS> empty.`;
 
   const userPrompt = `USER QUERY: ${query}\n\nSEARCH RESULTS:\n${context}`;
 
