@@ -29,6 +29,6 @@
 
 ## ☁️ Live Demo
 
-🚀 **[View the Live Application Here](https://your-vercel-app-link.vercel.app)**
+🚀 **[View the Live Application Here](https://ai-search-brown.vercel.app/)**
 
 _(Note: The live version requires the backend and database to be properly configured and running.)_
