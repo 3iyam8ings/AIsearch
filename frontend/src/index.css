@@ -18,6 +18,10 @@
   --radius-bubble: 20px;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, sans-serif;
@@ -1115,4 +1119,24 @@ body {
   font-size: 1.1rem;
   padding: 12px 32px;
   border-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .input-area {
+    padding: 15px;
+  }
+  .chat-history {
+    padding: 20px 15px;
+  }
+  .input-container {
+    gap: 8px;
+  }
+  .chat-input {
+    padding: 12px 16px;
+    font-size: 1rem;
+    min-width: 0;
+  }
+  .send-btn {
+    padding: 0 20px;
+  }
 }
