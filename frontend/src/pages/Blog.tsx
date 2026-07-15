@@ -38,7 +38,7 @@ const Blog: React.FC = () => {
             <img src="/architecture-diagram.png" alt="System Architecture Diagram" className="blog-image" />
             <figcaption>Frontend → Backend → (Supabase / Tavily / Ollama / Postgres)</figcaption>
           </figure>
-          
+
           <div className="blog-architecture-steps">
             <p><strong>Authentication:</strong> You log in, and Supabase seamlessly handles the Google/GitHub OAuth flow, issuing a secure JWT.</p>
             <p><strong>The Query:</strong> You ask a question. This goes securely to the backend, authenticated with your token.</p>
@@ -67,10 +67,10 @@ const Blog: React.FC = () => {
             Let's trace a concrete query end-to-end. Suppose you ask: <em>"What are the latest developments in quantum computing?"</em>
           </p>
           <p>
-            First, the frontend sends this to the Express backend with your Bearer token. The backend validates it against Supabase. Next, the backend fires off a query to Tavily, fetching recent news articles. 
-            <br/><br/>
-            We then construct a prompt: <em>"Using these sources: [Tavily Data], answer this question: [User Query]."</em> This massive string is sent to Ollama. As Ollama generates tokens, Bun pipes the stream directly back to the React frontend using Server-Sent Events (SSE). 
-            <br/><br/>
+            First, the frontend sends this to the Express backend with your Bearer token. The backend validates it against Supabase. Next, the backend fires off a query to Tavily, fetching recent news articles.
+            <br /><br />
+            We then construct a prompt: <em>"Using these sources: [Tavily Data], answer this question: [User Query]."</em> This massive string is sent to Ollama. As Ollama generates tokens, Bun pipes the stream directly back to the React frontend using Server-Sent Events (SSE).
+            <br /><br />
             Finally, once the stream finishes, the complete interaction is persisted to Postgres via Prisma. It's abstract architecture turned into tangible magic.
           </p>
         </section>
@@ -85,12 +85,14 @@ const Blog: React.FC = () => {
         </section>
 
         <section className="blog-section">
-          <h2>6. What's Next</h2>
-          <p>
-            Deployment is the immediate next step. I'm currently looking at hosting the frontend on Vercel or Netlify, and deploying the Bun backend to a compatible host like Render or Railway. 
-            <br/><br/>
-            Future features will include better source cards (showing favicons and rich metadata), and multi-model support so you can hot-swap between Llama 3, Mistral, and others.
-          </p>
+          <h2>6. Future Improvements</h2>
+          <ul className="blog-hard-parts">
+            <li><strong>API:</strong> Exposing endpoints for developers to integrate Spark AI.</li>
+            <li><strong>Image Upload:</strong> Allowing users to upload images for multimodal understanding and visual Q&A.</li>
+            <li><strong>Document & PDF Links:</strong> Upload or link PDFs and documents to chat directly with their contents.</li>
+            <li><strong>Voice Chat:</strong> Adding real-time voice interactions for a more natural conversational experience.</li>
+            <li><strong>More Emotional Engagement:</strong> Making the AI talk more like a human, with deeper empathy and emotional intelligence.</li>
+          </ul>
         </section>
 
         <section className="blog-section">

@@ -32,3 +32,13 @@
 🚀 **[View the Live Application Here](https://ai-search-brown.vercel.app/)**
 
 _(Note: The live version requires the backend and database to be properly configured and running.)_
+
+---
+
+## 🔮 Future Improvements
+
+1. **API**: Exposing endpoints for developers to integrate Spark AI.
+2. **Image Upload**: Allowing users to upload images for multimodal understanding and visual Q&A.
+3. **Document & PDF Links**: Upload or link PDFs and documents to chat directly with their contents.
+4. **Voice Chat**: Adding real-time voice interactions for a more natural conversational experience.
+5. **More Emotional Engagement**: Making the AI talk more like a human, with deeper empathy and emotional intelligence.
