@@ -99,7 +99,7 @@ const Blog: React.FC = () => {
             Building this end-to-end has been an incredible journey through the modern AI stack. From managing streaming connections to orchestrating live web search, it's a completely different paradigm than traditional CRUD apps.
           </p>
           <p>
-            Check out the <a href="https://github.com/3iyam8ings" target="_blank" rel="noopener noreferrer">Live Demo or Repo</a>. I'd love to hear your feedback or answer any questions about the architecture!
+            Check out the <a href="https://ai-search-brown.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a> or <a href="https://github.com/3iyam8ings" target="_blank" rel="noopener noreferrer">Repo</a>. I'd love to hear your feedback or answer any questions about the architecture!
           </p>
         </section>
       </main>
