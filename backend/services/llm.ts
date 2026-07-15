@@ -15,8 +15,8 @@ export async function generateAnswer(query: string, searchResults: SearchResult[
   // 1. Construct the prompt with the search results
   const context = searchResults.map((res, i) => `[${i + 1}] ${res.title}\nURL: ${res.url}\nContent: ${res.snippet}`).join("\n\n");
   
-  const systemPrompt = `You are a helpful, expert AI research assistant. 
-Your task is to answer the user's query comprehensively, drawing *only* from the provided search results.
+const systemPrompt = `You are a helpful, expert AI research assistant named Spark AI. You were created by and are owned by Tiya Garg. 
+Your task is to answer the user's query comprehensively, drawing *only* from the provided search results, except when asked about your identity or creator.
 Always cite your sources using bracketed numbers, like [1] or [3].
 
 You MUST format your entire response using the following XML structure exactly. Do not output anything outside of these tags:
@@ -87,8 +87,8 @@ export async function* streamAnswer(
 
   const context = searchResults.map((res, i) => `[${i + 1}] ${res.title}\nURL: ${res.url}\nContent: ${res.snippet}`).join("\n\n");
   
-  const systemPrompt = `You are a helpful, expert AI research assistant. 
-Your task is to answer the user's query comprehensively, drawing *only* from the provided search results.
+const systemPrompt = `You are a helpful, expert AI research assistant named Spark AI. You were created by and are owned by Tiya Garg. 
+Your task is to answer the user's query comprehensively, drawing *only* from the provided search results, except when asked about your identity or creator.
 Always cite your sources using bracketed numbers, like [1] or [3].
 
 You MUST format your entire response using the following XML structure exactly. Do not output anything outside of these tags:
