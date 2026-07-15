@@ -272,7 +272,6 @@ export default function Chat({ session }: ChatProps) {
                     const parsed = parseAiContent(m.content);
                     return (
                       <>
-                        <h2 className="message-title">{parsed.title}</h2>
                         <div className="message-content" style={{ whiteSpace: 'pre-wrap' }}>{parsed.answer}</div>
                       </>
                     )
@@ -285,7 +284,6 @@ export default function Chat({ session }: ChatProps) {
           {/* Actively streaming message */}
           {streamingResponse && (
             <div className="message message-assistant">
-              <h2 className="message-title">{streamingResponse.title}</h2>
               <div className="message-content" style={{ whiteSpace: 'pre-wrap' }}>{streamingResponse.answer}</div>
               
               {streamingResponse.sources?.length > 0 && (
