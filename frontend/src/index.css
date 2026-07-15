@@ -838,6 +838,14 @@ body {
     flex-wrap: wrap;
     gap: 10px;
   }
+  .login-nav-left {
+    white-space: nowrap;
+    flex: unset;
+  }
+  .login-nav-right {
+    flex: 1;
+    justify-content: flex-end;
+  }
   .login-nav-center {
     order: 3;
     width: 100%;
@@ -849,9 +857,10 @@ body {
     gap: 15px;
     text-align: center;
   }
-  .login-footer-right {
+  .login-footer-center, .login-footer-right {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 12px;
   }
 }
 
