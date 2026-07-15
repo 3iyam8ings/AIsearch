@@ -39,7 +39,21 @@ router.post("/", requireAuth, async (req: Request, res: Response): Promise<any> 
     }
 
     // 1. Get search results
-    const searchResults = await searchTavily(query);
+    const normalizedQuery = query.toLowerCase().replace(/[^a-z0-9\s]/g, "").trim();
+    const conversationalTriggers = [
+      "hello", "hi", "hi there", "hey",
+      "how are you spark ai", "how are you", 
+      "lift up my mood", "lift me up", 
+      "thank you", "thanks", 
+      "just want to chat", "i just want to chat", 
+      "just want to talk", "i just want to talk",
+      "who made you", "who created you", "who owns you", "what is your name"
+    ];
+
+    let searchResults: any[] = [];
+    if (!conversationalTriggers.includes(normalizedQuery)) {
+      searchResults = await searchTavily(query);
+    }
 
     // 2. Setup Server-Sent Events (SSE) stream
     res.setHeader("Content-Type", "text/event-stream");
