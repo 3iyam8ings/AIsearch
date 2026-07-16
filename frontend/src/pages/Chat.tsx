@@ -28,11 +28,12 @@ function parseAiContent(rawContent: string) {
   let answer = answerMatch ? answerMatch[1].trim() : rawContent;
 
   // Clean up answer if the LLM nested <FOLLOW_UPS> inside <ANSWER> or forgot </ANSWER>
-  answer = answer.replace(/<FOLLOW_UPS>[\s\S]*?(?:<\/FOLLOW_UPS>|$)/i, '').trim();
+  // Also handle the case where the LLM forgets the `<` character (e.g. FOLLOW_UPS>)
+  answer = answer.replace(/<?FOLLOW_UPS>[\s\S]*?(?:<\/FOLLOW_UPS>|$)/i, '').trim();
   // Clean up any other remaining tags like <TITLE> that might have leaked
-  answer = answer.replace(/<TITLE>[\s\S]*?<\/TITLE>/i, '').trim();
-  // Strip stray tags
-  answer = answer.replace(/<\/?(ANSWER|TITLE|FOLLOW_UPS|QUESTION)>/gi, '').trim();
+  answer = answer.replace(/<?TITLE>[\s\S]*?<\/TITLE>/i, '').trim();
+  // Strip stray tags (with or without the leading < if they end with >)
+  answer = answer.replace(/<?\/?(ANSWER|TITLE|FOLLOW_UPS|QUESTION)>/gi, '').trim();
 
   return {
     title: titleMatch ? titleMatch[1].trim() : '',
