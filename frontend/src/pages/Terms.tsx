@@ -29,7 +29,7 @@ const Terms: React.FC = () => {
           </p>
           <ul className="blog-hard-parts">
             <li><strong>Accuracy:</strong> The AI may occasionally produce inaccurate, incomplete, or misleading information ("hallucinations"). You should independently verify any critical factual claims.</li>
-            <li><strong>No Professional Advice:</strong> Information provided by Spark AI does not constitute professional medical, legal, financial, or psychological advice. Spark AI Inc. is not liable for any decisions you make based on generated outputs.</li>
+            <li><strong>No Professional Advice:</strong> Information provided by Spark AI does not constitute professional medical, legal, financial, or psychological advice. Spark AI is not liable for any decisions you make based on generated outputs.</li>
           </ul>
         </section>
 
@@ -54,7 +54,7 @@ const Terms: React.FC = () => {
             <strong>Your Content:</strong> You retain ownership of the prompts and questions you submit to Spark AI.
           </p>
           <p>
-            <strong>Our Application:</strong> Spark AI Inc. retains all ownership rights to the application's interface, backend architecture, branding, and codebase.
+            <strong>Our Application:</strong> Spark AI retains all ownership rights to the application's interface, backend architecture, branding, and codebase.
           </p>
         </section>
 

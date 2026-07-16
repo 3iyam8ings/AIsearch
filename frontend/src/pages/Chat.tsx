@@ -25,9 +25,18 @@ function parseAiContent(rawContent: string) {
     for (const m of qs) followUps.push(m[1].trim());
   }
 
+  let answer = answerMatch ? answerMatch[1].trim() : rawContent;
+
+  // Clean up answer if the LLM nested <FOLLOW_UPS> inside <ANSWER> or forgot </ANSWER>
+  answer = answer.replace(/<FOLLOW_UPS>[\s\S]*?(?:<\/FOLLOW_UPS>|$)/i, '').trim();
+  // Clean up any other remaining tags like <TITLE> that might have leaked
+  answer = answer.replace(/<TITLE>[\s\S]*?<\/TITLE>/i, '').trim();
+  // Strip stray tags
+  answer = answer.replace(/<\/?(ANSWER|TITLE|FOLLOW_UPS|QUESTION)>/gi, '').trim();
+
   return {
     title: titleMatch ? titleMatch[1].trim() : '',
-    answer: answerMatch ? answerMatch[1].trim() : rawContent,
+    answer: answer,
     followUps
   };
 }
